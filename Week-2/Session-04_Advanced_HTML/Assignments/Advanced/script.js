@@ -11,9 +11,6 @@ const mainstreetcafe = {
     reviews: []
   };
   
-  // Get the restaurant select element
-  debugger;
-  
   
   // Add submit event listener to the form
   document.getElementById('reviewForm').addEventListener('submit', submitReview);
@@ -21,7 +18,6 @@ const mainstreetcafe = {
   // Function to submit the review
   // Function to submit the review
 function submitReview(e) {
-  debugger;
     e.preventDefault(); // Prevent form submission
 
     const restaurantSelect = document.getElementById('restaurant');
@@ -52,17 +48,6 @@ function submitReview(e) {
       rating,
       details
     };
-  
-    // Add the review to the respective restaurant's reviews array
-    if (selectedRestaurant === 'mainstreetcafe') {
-      mainstreetcafe.reviews.push(review);
-      localStorage.setItem('reviewedRestaurant', 'mainstreetcafe');
-      window.location.href = 'mainstreetcafe.html';
-    } else if (selectedRestaurant === 'greekhouse') {
-      greekhouse.reviews.push(review);
-      localStorage.setItem('reviewedRestaurant', 'greekhouse');
-      window.location.href = 'greekhouse.html';
-    }
   }
   
   
