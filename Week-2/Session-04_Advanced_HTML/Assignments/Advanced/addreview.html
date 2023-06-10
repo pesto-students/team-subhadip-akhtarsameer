@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Review</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section>
+    <h1>Add Review</h1>
+  
+    <!-- Add Review Form -->
+<form id="reviewForm" onsubmit="submitReview(event)">
+    <label for="restaurant">Select Restaurant:</label>
+    <select id="restaurant" name="restaurant">
+      <option value="mainstreetcafe">Main Street Cafe</option>
+      <option value="greekhouse">Greek House</option>
+    </select>
+    
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+  
+    <label for="date">Date of Visit:</label>
+    <input type="date" id="date" name="date" required>
+  
+    <label for="rating">Rating:</label>
+    <input type="number" id="rating" name="rating" min="1" max="5" required>
+  
+    <label for="details">Details:</label>
+    <textarea id="details" name="details" required></textarea>
+  
+    <input type="submit" value="Submit Review">
+  </form>
+      
+      
+  </section>
+  
+
+  <footer>
+    <p>&copy; 2023 Restaurant Reviews. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Social Network Sign Up</title>
+    <style>
+        .form-group {
+            margin-bottom: 10px;
+        }
+        label {
+            display: inline-block;
+            width: 150px;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            display: inline-block;
+            width: 250px;
+        }
+        .success-message {
+            color: green;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.getElementById('signup-form');
+            var successMessage = document.getElementById('success-message');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent default form submission
+
+                // Get form field values
+                var fullName = document.getElementById('fullName').value;
+                var email = document.getElementById('email').value;
+                var about = document.getElementById('about').value;
+                var pictureInput = document.getElementById('picture');
+                var photoName = pictureInput.files.length > 0 ? pictureInput.files[0].name : '';
+
+                // Create JSON object
+                var jsonData = {
+                    "fullName": fullName,
+                    "email": email,
+                    "about": about,
+                    "photoName": photoName
+                };
+
+                // Log JSON data to console
+                console.log(JSON.stringify(jsonData, null, 2));
+
+                // Show success message
+                successMessage.textContent = 'Information successfully saved';
+                successMessage.style.display = 'block';
+
+                // Clear form fields
+                form.reset();
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Join a social network</h1>
+    <form id="signup-form" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="fullName">Full name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="about">About you:</label>
+            <textarea id="about" name="about" rows="3" cols="50"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="picture">Photo:</label>
+            <input type="file" id="picture" name="picture">
+        </div>
+        <div>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+    <div id="success-message" class="success-message" style="display: none;"></div>
+</body>
+</html>

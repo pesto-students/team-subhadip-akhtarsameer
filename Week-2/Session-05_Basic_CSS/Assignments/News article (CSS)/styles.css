@@ -1,0 +1,46 @@
+/* Add your styles here */
+/* Article images */
+article img {
+    width: 300px;
+  }
+  
+  /* Article heading */
+  article h1 {
+    padding: 5px;
+    font-family: Arial;
+    font-size: 24px;
+    color: white;
+    background-color: red;
+  }
+  
+  /* Author name and date */
+  #author-name-and-date {
+    font-family: Arial;
+    font-size: 12px;
+    color: lightgray;
+  }
+  
+  /* Article text */
+  article p,
+  article ol {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+    color: gray;
+  }
+  
+  /* Share links */
+  article a {
+    font-family: Arial;
+    font-size: 12px;
+    color: blue;
+  }
+  
+  h1 {
+    padding: 5px;
+    font-family: Arial;
+    font-size: 24px;
+    color: white;
+    background-color: red;
+  }
+  
+  
