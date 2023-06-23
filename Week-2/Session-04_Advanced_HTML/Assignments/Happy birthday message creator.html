@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Birthday Message Creator</title>
+    <style>
+        .form-group {
+            margin-bottom: 10px;
+        }
+        label {
+            display: inline-block;
+            width: 250px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="color"],
+        input[type="number"],
+        input[type="range"] {
+            display: inline-block;
+            width: 250px;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.getElementById('birthday-form');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent default form submission
+
+                // Get form field values
+                var message = document.getElementById('message').value;
+                var email = document.getElementById('email').value;
+                var birthdayDate = document.getElementById('birthday-date').value;
+                var messageColor = document.getElementById('message-color').value;
+                var blinkTimes = document.getElementById('blink-times').value;
+                var musicVolume = document.getElementById('music-volume').value;
+
+                // Create JSON object
+                var jsonData = {
+                    "message": message,
+                    "email": email,
+                    "birthdayDate": birthdayDate,
+                    "messageColor": messageColor,
+                    "blinkTimes": blinkTimes,
+                    "musicVolume": musicVolume
+                };
+
+                // Log JSON data to console
+                console.log(JSON.stringify(jsonData, null, 2));
+
+                // Clear form fields
+                form.reset();
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Happy Birthday Message Creator</h1>
+    <form id="birthday-form">
+        <div class="form-group">
+            <label for="message">Birthday Message:</label>
+            <input type="text" id="message" name="message" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" pattern="[a-zA-Z0-9-_.]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*" required>
+        </div>
+        <div class="form-group">
+            <label for="birthday-date">Date to Send:</label>
+            <input type="date" id="birthday-date" name="birthday-date" required>
+        </div>
+        <div class="form-group">
+            <label for="message-color">Message Color:</label>
+            <input type="color" id="message-color" name="message-color" required>
+        </div>
+        <div class="form-group">
+            <label for="blink-times">Number of Times to Blink:</label>
+            <input type="number" id="blink-times" name="blink-times" min="0" max="10" value="0" required>
+        </div>
+        <div class="form-group">
+            <label for="music-volume">Music Volume:</label>
+            <input type="range" id="music-volume" name="music-volume" min="0" max="50" value="20" required>
+        </div>
+        <div>
+            <button type="submit">Send Birthday Message</button>
+        </div>
+    </form>
+</body>
+</html>
